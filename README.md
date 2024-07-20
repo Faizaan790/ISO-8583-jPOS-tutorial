@@ -1,222 +1,222 @@
 # ISO-8583 for Visa and Mastercard Transactions: A Comprehensive Developer's Guide
 
 1. [Introduction to ISO-8583](src/1.md)
-1.1. What is ISO-8583?
-- 1.1.1. Definition and purpose
-- 1.1.2. Role in electronic financial transactions
-1.2. History and versions
-- 1.2.1. ISO-8583:1987
-- 1.2.2. ISO-8583:1993
-- 1.2.3. ISO-8583:2003
-1.3. Importance in financial transactions
-- 1.3.1. Global standardization
-- 1.3.2. Interoperability between financial institutions
+- 1.1. What is ISO-8583?
+  - 1.1.1. Definition and purpose
+  - 1.1.2. Role in electronic financial transactions
+- 1.2. History and versions
+  - 1.2.1. ISO-8583:1987
+  - 1.2.2. ISO-8583:1993
+  - 1.2.3. ISO-8583:2003
+- 1.3. Importance in financial transactions
+  - 1.3.1. Global standardization
+  - 1.3.2. Interoperability between financial institutions
 
 2. [ISO-8583 Message Structure](src/2.md)
-2.1. Message Type Indicator (MTI)
-- 2.1.1. Four-digit structure
-- 2.1.2. Version, Message Class, Message Function, Message Origin
-2.2. Bitmaps
-- 2.2.1. Primary bitmap
-- 2.2.2. Secondary bitmap
-- 2.2.3. Tertiary bitmap (if applicable)
-2.3. Data Elements
-- 2.3.1. Field numbering (1-128 for primary, 129-192 for secondary)
-- 2.3.2. Data element presence indication
+- 2.1. Message Type Indicator (MTI)
+  - 2.1.1. Four-digit structure
+  - 2.1.2. Version, Message Class, Message Function, Message Origin
+- 2.2. Bitmaps
+    - 2.2.1. Primary bitmap
+    - 2.2.2. Secondary bitmap
+    - 2.2.3. Tertiary bitmap (if applicable)
+- 2.3. Data Elements
+  - 2.3.1. Field numbering (1-128 for primary, 129-192 for secondary)
+  - 2.3.2. Data element presence indication
 
 3. [Data Elements](src/3.md)
-3.1. Mandatory vs. Optional fields
-- 3.1.1. Identifying mandatory fields
-- 3.1.2. Handling optional fields
-3.2. Fixed-length vs. Variable-length fields
-- 3.2.1. Length indicators for variable fields
-- 3.2.2. Padding for fixed-length fields
-3.3. Key data elements for Visa and Mastercard transactions
-- 3.3.1. Primary Account Number (PAN)
-- 3.3.2. Processing Code
-- 3.3.3. Transaction Amount
-- 3.3.4. Transmission Date and Time
-- 3.3.5. Systems Trace Audit Number (STAN)
-- 3.3.6. Time, Local Transaction
-- 3.3.7. Date, Local Transaction
-- 3.3.8. Date, Expiration
-- 3.3.9. Merchant Type
-- 3.3.10. Acquiring Institution ID Code
-- 3.3.11. Track 2 Data
-- 3.3.12. Retrieval Reference Number
-- 3.3.13. Authorization ID Response
-- 3.3.14. Response Code
-- 3.3.15. Card Acceptor Terminal ID
-- 3.3.16. Card Acceptor ID Code
-- 3.3.17. Card Acceptor Name/Location
-- 3.3.18. Additional Data - Private
-3.4. Data types and formats
-- 3.4.1. Numeric (n)
-- 3.4.2. Alphabetic (a)
-- 3.4.3. Special (s)
-- 3.4.4. Alphanumeric (an)
-- 3.4.5. Binary (b)
-- 3.4.6. Track 2 (z)
+- 3.1. Mandatory vs. Optional fields
+  - 3.1.1. Identifying mandatory fields
+  - 3.1.2. Handling optional fields
+- 3.2. Fixed-length vs. Variable-length fields
+  - 3.2.1. Length indicators for variable fields
+  - 3.2.2. Padding for fixed-length fields
+- 3.3. Key data elements for Visa and Mastercard transactions
+  - 3.3.1. Primary Account Number (PAN)
+  - 3.3.2. Processing Code
+  - 3.3.3. Transaction Amount
+  - 3.3.4. Transmission Date and Time
+  - 3.3.5. Systems Trace Audit Number (STAN)
+  - 3.3.6. Time, Local Transaction
+  - 3.3.7. Date, Local Transaction
+  - 3.3.8. Date, Expiration
+  - 3.3.9. Merchant Type
+  - 3.3.10. Acquiring Institution ID Code
+  - 3.3.11. Track 2 Data
+  - 3.3.12. Retrieval Reference Number
+  - 3.3.13. Authorization ID Response
+  - 3.3.14. Response Code
+  - 3.3.15. Card Acceptor Terminal ID
+  - 3.3.16. Card Acceptor ID Code
+  - 3.3.17. Card Acceptor Name/Location
+  - 3.3.18. Additional Data - Private
+- 3.4. Data types and formats
+  - 3.4.1. Numeric (n)
+  - 3.4.2. Alphabetic (a)
+  - 3.4.3. Special (s)
+  - 3.4.4. Alphanumeric (an)
+  - 3.4.5. Binary (b)
+  - 3.4.6. Track 2 (z)
 
 4. [Message Type Indicators (MTIs)](src/4.md)
-4.1. Authorization messages
-- 4.1.1. 0100: Authorization Request
-- 4.1.2. 0110: Authorization Response
-4.2. Financial messages
-- 4.2.1. 0200: Financial Request
-- 4.2.2. 0210: Financial Response
-4.3. Reversal messages
-- 4.3.1. 0400: Reversal Request
-- 4.3.2. 0410: Reversal Response
-4.4. Network management messages
-- 4.4.1. 0800: Network Management Request
-- 4.4.2. 0810: Network Management Response
+- 4.1. Authorization messages
+  - 4.1.1. 0100: Authorization Request
+  - 4.1.2. 0110: Authorization Response
+- 4.2. Financial messages
+  - 4.2.1. 0200: Financial Request
+  - 4.2.2. 0210: Financial Response
+- 4.3. Reversal messages
+  - 4.3.1. 0400: Reversal Request
+  - 4.3.2. 0410: Reversal Response
+- 4.4. Network management messages
+  - 4.4.1. 0800: Network Management Request
+  - 4.4.2. 0810: Network Management Response
 
 5. [Visa-specific Implementation](src/5.md)
-5.1. Visa transaction types
-- 5.1.1. Purchase
-- 5.1.2. Cash Advance
-- 5.1.3. Balance Inquiry
-- 5.1.4. Refund
-5.2. Visa-specific data elements
-- 5.2.1. Field 42: Card Acceptor ID Code
-- 5.2.2. Field 43: Card Acceptor Name/Location
-- 5.2.3. Field 48: Additional Data - Private Use
-5.3. Visa processing codes
-- 5.3.1. Purchase: 00
-- 5.3.2. Cash Advance: 01
-- 5.3.3. Void: 02
-- 5.3.4. Refund: 20
+- 5.1. Visa transaction types
+  - 5.1.1. Purchase
+  - 5.1.2. Cash Advance
+  - 5.1.3. Balance Inquiry
+  - 5.1.4. Refund
+- 5.2. Visa-specific data elements
+  - 5.2.1. Field 42: Card Acceptor ID Code
+  - 5.2.2. Field 43: Card Acceptor Name/Location
+  - 5.2.3. Field 48: Additional Data - Private Use
+- 5.3. Visa processing codes
+  - 5.3.1. Purchase: 00
+  - 5.3.2. Cash Advance: 01
+  - 5.3.3. Void: 02
+  - 5.3.4. Refund: 20
 
 6. [Mastercard-specific Implementation](src/6.md)
-6.1. Mastercard transaction types
-- 6.1.1. Purchase
-- 6.1.2. Cash Advance
-- 6.1.3. Balance Inquiry
-- 6.1.4. Refund
-6.2. Mastercard-specific data elements
-- 6.2.1. Field 48: Additional Data - Private Use
-- 6.2.2. Field 61: Point-of-Service (POS) Data
-- 6.2.3. Field 63: Network Data
-6.3. Mastercard processing codes
-- 6.3.1. Purchase: 00
-- 6.3.2. Cash Advance: 01
-- 6.3.3. Void: 02
-- 6.3.4. Refund: 20
+- 6.1. Mastercard transaction types
+  - 6.1.1. Purchase
+  - 6.1.2. Cash Advance
+  - 6.1.3. Balance Inquiry
+  - 6.1.4. Refund
+- 6.2. Mastercard-specific data elements
+  - 6.2.1. Field 48: Additional Data - Private Use
+  - 6.2.2. Field 61: Point-of-Service (POS) Data
+  - 6.2.3. Field 63: Network Data
+- 6.3. Mastercard processing codes
+  - 6.3.1. Purchase: 00
+  - 6.3.2. Cash Advance: 01
+  - 6.3.3. Void: 02
+  - 6.3.4. Refund: 20
 
 7. [Transaction Flow](src/7.md)
-7.1. Authorization flow
-- 7.1.1. Card presented at merchant
-- 7.1.2. Terminal sends authorization request
-- 7.1.3. Acquirer processes and forwards request
-- 7.1.4. Card network routes to issuer
-- 7.1.5. Issuer approves or declines
-- 7.1.6. Response sent back through the chain
-7.2. Clearing and settlement
-- 7.2.1. Batch processing
-- 7.2.2. Clearing files
-- 7.2.3. Settlement between acquirers and issuers
-7.3. Chargebacks and disputes
-- 7.3.1. Chargeback initiation
-- 7.3.2. Representment
-- 7.3.3. Arbitration
+- 7.1. Authorization flow
+  - 7.1.1. Card presented at merchant
+  - 7.1.2. Terminal sends authorization request
+  - 7.1.3. Acquirer processes and forwards request
+  - 7.1.4. Card network routes to issuer
+  - 7.1.5. Issuer approves or declines
+  - 7.1.6. Response sent back through the chain
+- 7.2. Clearing and settlement
+  - 7.2.1. Batch processing
+  - 7.2.2. Clearing files
+  - 7.2.3. Settlement between acquirers and issuers
+- 7.3. Chargebacks and disputes
+  - 7.3.1. Chargeback initiation
+  - 7.3.2. Representment
+  - 7.3.3. Arbitration
 
 8. [Security and Encryption](src/8.md)
-8.1. PIN block formats
-- 8.1.1. ISO Format 0 (Zero)
-- 8.1.2. ISO Format 1
-- 8.1.3. ISO Format 3
-8.2. Key management
-- 8.2.1. Master keys
-- 8.2.2. Session keys
-- 8.2.3. Key exchange protocols
-8.3. Secure messaging
-- 8.3.1. MAC (Message Authentication Code)
-- 8.3.2. DUKPT (Derived Unique Key Per Transaction)
+- 8.1. PIN block formats
+  - 8.1.1. ISO Format 0 (Zero)
+  - 8.1.2. ISO Format 1
+  - 8.1.3. ISO Format 3
+- 8.2. Key management
+  - 8.2.1. Master keys
+  - 8.2.2. Session keys
+  - 8.2.3. Key exchange protocols
+- 8.3. Secure messaging
+  - 8.3.1. MAC (Message Authentication Code)
+  - 8.3.2. DUKPT (Derived Unique Key Per Transaction)
 
 9. [Error Handling and Response Codes](src/9.md)
-9.1. Common response codes
-- 9.1.1. Approval codes
-- 9.1.2. Decline codes
-- 9.1.3. Referral codes
-9.2. Error scenarios and handling
-- 9.2.1. Network errors
-- 9.2.2. Format errors
-- 9.2.3. Security errors
+- 9.1. Common response codes
+  - 9.1.1. Approval codes
+  - 9.1.2. Decline codes
+  - 9.1.3. Referral codes
+- 9.2. Error scenarios and handling
+  - 9.2.1. Network errors
+  - 9.2.2. Format errors
+  - 9.2.3. Security errors
 
 10. [Testing and Certification](src/10.md)
-10.1. Visa testing requirements
-- 10.1.1. Visa Acquirer Device Validation Toolkit (ADVT)
-- 10.1.2. Visa Global Acquirer Testing (VGAT)
-10.2. Mastercard testing requirements
-- 10.2.1. Mastercard Terminal Integration Process (M-TIP)
-- 10.2.2. Mastercard Interface Processor (MIP)
-10.3. Simulation and test environments
-- 10.3.1. Host simulators
-- 10.3.2. Test card numbers
-- 10.3.3. Regression testing suites
+- 10.1. Visa testing requirements
+  - 10.1.1. Visa Acquirer Device Validation Toolkit (ADVT)
+  - 10.1.2. Visa Global Acquirer Testing (VGAT)
+- 10.2. Mastercard testing requirements
+  - 10.2.1. Mastercard Terminal Integration Process (M-TIP)
+  - 10.2.2. Mastercard Interface Processor (MIP)
+- 10.3. Simulation and test environments
+  - 10.3.1. Host simulators
+  - 10.3.2. Test card numbers
+  - 10.3.3. Regression testing suites
 
 11. [Best Practices for ISO-8583 Development](src/11.md)
-11.1. Code organization
-- 11.1.1. Modular design
-- 11.1.2. Separation of concerns
-11.2. Logging and debugging
-- 11.2.1. Transaction logging
-- 11.2.2. Error logging
-- 11.2.3. Debugging techniques
-11.3. Performance optimization
-- 11.3.1. Message parsing efficiency
-- 11.3.2. Connection pooling
-- 11.3.3. Caching strategies
+- 11.1. Code organization
+  - 11.1.1. Modular design
+  - 11.1.2. Separation of concerns
+- 11.2. Logging and debugging
+  - 11.2.1. Transaction logging
+  - 11.2.2. Error logging
+  - 11.2.3. Debugging techniques
+- 11.3. Performance optimization
+  - 11.3.1. Message parsing efficiency
+  - 11.3.2. Connection pooling
+  - 11.3.3. Caching strategies
 
 12. [Integration with Payment Gateways](src/12.md)
-12.1. Common gateway interfaces
-- 12.1.1. RESTful APIs
-- 12.1.2. SOAP web services
-12.2. Mapping ISO-8583 to API calls
-- 12.2.1. Field mapping strategies
-- 12.2.2. Data transformation
+- 12.1. Common gateway interfaces
+  - 12.1.1. RESTful APIs
+  - 12.1.2. SOAP web services
+- 12.2. Mapping ISO-8583 to API calls
+  - 12.2.1. Field mapping strategies
+  - 12.2.2. Data transformation
 
 13. [Compliance and Regulations](src/13.md)
-13.1. PCI-DSS requirements
-- 13.1.1. Data protection
-- 13.1.2. Network security
-- 13.1.3. Access control
-13.2. Regional regulations
-- 13.2.1. GDPR (Europe)
-- 13.2.2. CCPA (California)
-- 13.2.3. Other regional data protection laws
+- 13.1. PCI-DSS requirements
+  - 13.1.1. Data protection
+  - 13.1.2. Network security
+  - 13.1.3. Access control
+- 13.2. Regional regulations
+  - 13.2.1. GDPR (Europe)
+  - 13.2.2. CCPA (California)
+  - 13.2.3. Other regional data protection laws
 
 14. [Advanced Topics](src/14.md)
-14.1. EMV and chip card transactions
-- 14.1.1. EMV data in ISO-8583 messages
-- 14.1.2. Chip card specific fields
-14.2. Tokenization
-- 14.2.1. Token formats
-- 14.2.2. De-tokenization process
-14.3. 3-D Secure integration
-- 14.3.1. 3-D Secure data in ISO-8583
-- 14.3.2. 3-D Secure 2.0 considerations
+- 14.1. EMV and chip card transactions
+  - 14.1.1. EMV data in ISO-8583 messages
+  - 14.1.2. Chip card specific fields
+- 14.2. Tokenization
+  - 14.2.1. Token formats
+  - 14.2.2. De-tokenization process
+- 14.3. 3-D Secure integration
+  - 14.3.1. 3-D Secure data in ISO-8583
+  - 14.3.2. 3-D Secure 2.0 considerations
 
 ## 15. [Troubleshooting and Common Issues](src/15.md)
-15.1. Message parsing errors
-- 15.1.1. Bitmap inconsistencies
-- 15.1.2. Field length mismatches
-15.2. Network connectivity issues
-- 15.2.1. Timeout handling
-- 15.2.2. Retry mechanisms
-15.3. Reconciliation problems
-- 15.3.1. Out-of-balance scenarios
-- 15.3.2. Missing transactions
+- 15.1. Message parsing errors
+  - 15.1.1. Bitmap inconsistencies
+  - 15.1.2. Field length mismatches
+- 15.2. Network connectivity issues
+  - 15.2.1. Timeout handling
+  - 15.2.2. Retry mechanisms
+- 15.3. Reconciliation problems
+  - 15.3.1. Out-of-balance scenarios
+  - 15.3.2. Missing transactions
 
 ## 16. [Future of ISO-8583](src/16.md)
-16.1. Emerging standards
-- 16.1.1. JSON-based messaging
-- 16.1.2. XML alternatives
-16.2. ISO 20022 migration
-- 16.2.1. Comparison with ISO-8583
-- 16.2.2. Migration strategies
-- 16.2.3. Coexistence scenarios
+- 16.1. Emerging standards
+  - 16.1.1. JSON-based messaging
+  - 16.1.2. XML alternatives
+- 16.2. ISO 20022 migration
+  - 16.2.1. Comparison with ISO-8583
+  - 16.2.2. Migration strategies
+  - 16.2.3. Coexistence scenarios
 
 
 # jPOS Server Implementation
